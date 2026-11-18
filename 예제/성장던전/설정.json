@@ -1,0 +1,16 @@
+{
+  "game": "예시게임",
+  "content": "성장던전",
+  "preset": "daily",
+  "model": "모델.json",
+  "purpose": "지정 콘텐츠의 보상·성장·경제 영향을 설계",
+  "scope": "입장·클리어·보상·직접 연결 성장·재화 수급",
+  "exclude": [
+    "게임 전체 방향",
+    "UA·마케팅",
+    "무관한 BM 개편"
+  ],
+  "materials": [],
+  "fixed_decisions": [],
+  "data_status": "가상 초안 — 실데이터로 교체 필요"
+}

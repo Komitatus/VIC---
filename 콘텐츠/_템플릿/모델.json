@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "game": "예시게임",
+  "content": {
+    "id": "growth_dungeon",
+    "name": "성장던전",
+    "start_day": 1,
+    "end_day": 28,
+    "reset_days": 1,
+    "attempts_per_reset": 3,
+    "entry_cost": {
+      "ticket": 1
+    },
+    "failure_cost_ratio": 1,
+    "stages": [
+      {
+        "id": "normal",
+        "name": "일반",
+        "min_level": 0,
+        "minutes": 3,
+        "clear_rate": 0.95,
+        "rewards": [
+          {
+            "currency": "gold",
+            "amount": 100,
+            "probability": 1,
+            "group": ""
+          },
+          {
+            "currency": "shard",
+            "amount": 8,
+            "probability": 1,
+            "group": ""
+          },
+          {
+            "currency": "shard",
+            "amount": 5,
+            "probability": 0.2,
+            "group": ""
+          }
+        ],
+        "first_clear": {
+          "gold": 200,
+          "shard": 15
+        }
+      },
+      {
+        "id": "hard",
+        "name": "어려움",
+        "min_level": 5,
+        "minutes": 4,
+        "clear_rate": 0.85,
+        "rewards": [
+          {
+            "currency": "gold",
+            "amount": 180,
+            "probability": 1,
+            "group": ""
+          },
+          {
+            "currency": "shard",
+            "amount": 15,
+            "probability": 1,
+            "group": ""
+          }
+        ],
+        "first_clear": {
+          "gold": 400,
+          "shard": 30
+        }
+      }
+    ]
+  },
+  "currencies": [
+    {
+      "id": "gold",
+      "name": "골드",
+      "unit": "개"
+    },
+    {
+      "id": "shard",
+      "name": "성장 조각",
+      "unit": "개"
+    },
+    {
+      "id": "ticket",
+      "name": "입장권",
+      "unit": "장"
+    }
+  ],
+  "growth": {
+    "start_level": 0,
+    "target_level": 10,
+    "starting_power": 100,
+    "steps": [
+      {
+        "level": 1,
+        "cost": {
+          "gold": 155,
+          "shard": 23
+        },
+        "power": 120
+      },
+      {
+        "level": 2,
+        "cost": {
+          "gold": 190,
+          "shard": 31
+        },
+        "power": 140
+      },
+      {
+        "level": 3,
+        "cost": {
+          "gold": 225,
+          "shard": 39
+        },
+        "power": 160
+      },
+      {
+        "level": 4,
+        "cost": {
+          "gold": 260,
+          "shard": 47
+        },
+        "power": 180
+      },
+      {
+        "level": 5,
+        "cost": {
+          "gold": 295,
+          "shard": 55
+        },
+        "power": 200
+      },
+      {
+        "level": 6,
+        "cost": {
+          "gold": 330,
+          "shard": 63
+        },
+        "power": 220
+      },
+      {
+        "level": 7,
+        "cost": {
+          "gold": 365,
+          "shard": 71
+        },
+        "power": 240
+      },
+      {
+        "level": 8,
+        "cost": {
+          "gold": 400,
+          "shard": 79
+        },
+        "power": 260
+      },
+      {
+        "level": 9,
+        "cost": {
+          "gold": 435,
+          "shard": 87
+        },
+        "power": 280
+      },
+      {
+        "level": 10,
+        "cost": {
+          "gold": 470,
+          "shard": 95
+        },
+        "power": 300
+      }
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "casual",
+      "name": "라이트 무과금",
+      "start_level": 0,
+      "active_days_per_week": 4,
+      "minutes_per_active_day": 12,
+      "attempts_per_active_day": 2,
+      "clear_rate_multiplier": 1,
+      "initial_wallet": {},
+      "daily_income": {
+        "gold": 60,
+        "ticket": 3
+      },
+      "daily_sink": {
+        "gold": 20
+      },
+      "purchases": []
+    },
+    {
+      "id": "regular",
+      "name": "꾸준한 무과금",
+      "start_level": 0,
+      "active_days_per_week": 7,
+      "minutes_per_active_day": 30,
+      "attempts_per_active_day": 3,
+      "clear_rate_multiplier": 1,
+      "initial_wallet": {},
+      "daily_income": {
+        "gold": 60,
+        "ticket": 3
+      },
+      "daily_sink": {
+        "gold": 20
+      },
+      "purchases": []
+    },
+    {
+      "id": "pass",
+      "name": "패스 이용",
+      "start_level": 0,
+      "active_days_per_week": 7,
+      "minutes_per_active_day": 30,
+      "attempts_per_active_day": 3,
+      "clear_rate_multiplier": 1,
+      "initial_wallet": {},
+      "daily_income": {
+        "gold": 60,
+        "ticket": 3
+      },
+      "daily_sink": {
+        "gold": 20
+      },
+      "purchases": [
+        {
+          "id": "pass_28d",
+          "day": 1,
+          "price_krw": 9900,
+          "grants": {
+            "gold": 800,
+            "shard": 120
+          }
+        }
+      ]
+    }
+  ],
+  "simulation": {
+    "days": 28,
+    "samples": 400,
+    "seed": 2026
+  },
+  "targets": [
+    {
+      "cohort": "regular",
+      "p50_day_min": 14,
+      "p50_day_max": 21,
+      "min_completion_rate": 0.9
+    }
+  ],
+  "assumptions": [
+    "가상 예제: 수치·가격·플레이 패턴은 실측이나 업계 기준이 아닙니다.",
+    "매일 독립적으로 접속 여부를 추첨하며, 보상·입장권의 보유 상한과 소멸은 없습니다.",
+    "재화가 모이면 확정 성장하며, 전투력은 표시용이고 클리어율은 난이도별 고정 입력입니다.",
+    "외부 일일 수입·소모·예약 구매는 미접속일에도 처리합니다. 패스는 1일차 일괄 지급 가정입니다."
+  ]
+}
