@@ -38,8 +38,8 @@ class ProposedDungeonTests(unittest.TestCase):
 
 class ProposedDungeonEconomyTests(unittest.TestCase):
     def setUp(self):
-        self.model = json.loads((Path(__file__).resolve().parents[1] /
-            "콘텐츠/명조/신규던전_잔향정제실/모델.json").read_text())
+        fixture = Path(__file__).with_name("잔향정제실_예제.json")
+        self.model = json.loads(fixture.read_text(encoding="utf-8"))
 
     def test_every_stage_uses_global_sliders_and_whole_rewards(self):
         self.model["global_controls"].update(cost=80, xp_percent=150, tuner_percent=150, coin_percent=50)
